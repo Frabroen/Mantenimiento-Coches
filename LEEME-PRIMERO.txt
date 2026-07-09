@@ -1,0 +1,67 @@
+════════════════════════════════════════════════════════════
+   MIS COCHES · Guía rápida para ponerla en marcha
+════════════════════════════════════════════════════════════
+
+Esta app es un solo archivo (index.html), igual que tu Deposit Manager.
+Solo tienes que rellenar DOS huecos y subirla. No hay que instalar nada.
+
+────────────────────────────────────────────────────────────
+PASO 1 · Abre index.html con un editor de texto
+────────────────────────────────────────────────────────────
+- Clic derecho sobre index.html → "Abrir con" → Bloc de notas
+  (Windows) o cualquier editor de texto. NO con el navegador.
+- (Si tienes VS Code, mejor aún, pero el Bloc de notas vale.)
+
+────────────────────────────────────────────────────────────
+PASO 2 · HUECO 1 — tu configuración de Firebase
+────────────────────────────────────────────────────────────
+- Busca en el archivo el texto:   HUECO 1 de 2
+- Justo debajo verás un bloque:    const firebaseConfig = { ... }
+  con valores "TU_API_KEY", "TU_PROYECTO", etc.
+- En la consola de Firebase:
+    Configuración del proyecto (rueda dentada)
+    → Tus apps → Web </> → registra la app "Mis Coches"
+    → copia el bloque firebaseConfig que te muestra.
+- Sustituye TODO el bloque de ejemplo por el tuyo (pega encima).
+
+────────────────────────────────────────────────────────────
+PASO 3 · HUECO 2 — los dos correos de la familia
+────────────────────────────────────────────────────────────
+- Busca en el archivo el texto:   HUECO 2 de 2
+- Cambia:
+    "correo-1@gmail.com",
+    "correo-2@gmail.com"
+  por los dos correos de Google reales que van a entrar.
+- IMPORTANTE: han de ser los MISMOS que pusiste en las Reglas
+  de Firestore (con la @ bien puesta).
+
+Guarda el archivo (Archivo → Guardar).
+
+────────────────────────────────────────────────────────────
+PASO 4 · Subir la app a internet
+────────────────────────────────────────────────────────────
+Igual que hiciste con Deposit Manager. Sube toda esta carpeta
+(index.html, manifest.json, favicon, y la carpeta icons) al
+mismo sitio donde alojas tus apps.
+
+En Firebase, ve a Authentication → Settings → Dominios
+autorizados y añade el dominio donde quede publicada.
+
+────────────────────────────────────────────────────────────
+PASO 5 · Instalar en el iPhone
+────────────────────────────────────────────────────────────
+- Abre la web publicada en Safari.
+- Botón compartir → "Añadir a pantalla de inicio".
+- Aparecerá con el icono de Mis Coches.
+
+────────────────────────────────────────────────────────────
+NOTAS
+────────────────────────────────────────────────────────────
+- Las facturas se guardan dentro de Firestore (sin Storage, sin
+  tarjeta). Límite ~0,7 MB por factura; si una foto pesa más, la
+  app avisa: hazle una foto de menos resolución.
+- La primera vez el garaje está vacío: pulsa "Añadir coche" y
+  mete tus dos coches con sus km y fecha de matriculación.
+- La cuenta con la que creaste Firebase NO tiene por qué ser una
+  de las que entran en la app. Entra con cualquiera de los dos
+  correos que pusiste en el HUECO 2.
